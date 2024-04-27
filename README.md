@@ -96,6 +96,19 @@ When you have already all the information installed, then we have to pass to the
 
 &&&&& jp mete aca el programa que usa la camara &&
 
-After using this program, we 
+After using this program, teh next step is to connect the camera, the ML obect detection model and the Doppler sensor for being able to capture the image of the camera when this detects an vehicule if this pass the maximun speed stablished, so this code will be able to generate a document when the image is saved with the data of the object that was detected by the camera. 
+```
+inseratar codigo final que tenemos en la rasp
+```
+By the way, the project is still on work so this is not complete by this date 04-26-2024, but all the data and documentation about this is avaiblable on this repository done by Juan Pablo Zebadua Engel and Diego Jose Giron Figueroa
+
+we based our project on the following projects from the web:
+```
+https://www.hackster.io/rob-lauer/busted-create-an-ml-powered-speed-trap-b1e5d1
+```
+```
+https://github.com/rdlauer/pispeedtrap
+```
+
 
    
