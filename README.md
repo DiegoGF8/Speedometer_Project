@@ -92,6 +92,10 @@ ops_get_speed()
 
 This code, will show the information about on the the format in which we want the data to be displayed.
 
+When you have already all the information installed, then we have to pass to the part of connecting a camera to the raspberry pi, on our case we use a web-cam taht connects via usb, for the case of the raspberry pi 4 you will need to have a camera that conects on usb 3.0 for this to work correct. 
 
+&&&&& jp mete aca el programa que usa la camara &&
+
+After using this program, we 
 
    
