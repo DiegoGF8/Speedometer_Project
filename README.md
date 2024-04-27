@@ -3,9 +3,7 @@
 This project is looking for being able to register the speed of a vehicle and be able to recognize the type of vehicle. This is looking to become a ticket camera for a city, so this will be a more afordable way to provide this to the city in cuestion. The implementation of this project is done by using multiple elemente. The first that will be use is a raspberry pi, a camera compatible with the raspberry and also an omnipresence OPS243-A Doppler Radar Sensor; for the software you wil need to use python version 3.12.3, arduino ID and also the use of a machine learning app name EdgeImpulse. 
 
 For initiating this project, you will need to have both the Dopller sensor and a raspberry pi. You will conect and configure both of this and you will be able to notice if this is done correctly by verifying the serial communication (COM) and for this you can use the arduino IDE program as this let you check in a easy way as this program let you open a window where you can see in real time the information that the sensor is able to receive form the objects in front, this will be the distance and the speed of the object in front of this. 
-```
-hola
-```
+
 
 Afer being the configuration of the sensor in the raspberry pi, the next step is to creat a python object detection library by using the tool of edge impulse online. Into this tool you first will need to go into the main menu and after this you will creat a new project. This will need you to select the object detection section on the tool. Into this you will need to take pictures as a recommendation or you can download this fomr the internet for letting the machine learning tool train in the object detection. 
 
