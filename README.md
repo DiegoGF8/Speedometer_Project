@@ -92,8 +92,6 @@ This code, will show the information about on the the format in which we want th
 
 When you have already all the information installed, then we have to pass to the part of connecting a camera to the raspberry pi, on our case we use a web-cam taht connects via usb, for the case of the raspberry pi 4 you will need to have a camera that conects on usb 3.0 for this to work correct. 
 
-&&&&& jp mete aca el programa que usa la camara &&
-
 After using this program, teh next step is to connect the camera, the ML obect detection model and the Doppler sensor for being able to capture the image of the camera when this detects an vehicule if this pass the maximun speed stablished, so this code will be able to generate a document when the image is saved with the data of the object that was detected by the camera. 
 ```
 import cv2
