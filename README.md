@@ -1,8 +1,8 @@
 # Speedometer_Project
 
-This project is looking for being able to register the speed of a vehicle and be able to recognize the type of vehicle. This is looking to become a ticket camera for a city, so this will be a more afordable way to provide this to the city in cuestion. The implementation of this project is done by using multiple elemente. The first that will be use is a raspberry pi, a camera compatible with the raspberry and also an omnipresence OPS243-A Doppler Radar Sensor; for the software you wil need to use python version 3.12.3, arduino ID and also the use of a machine learning app name EdgeImpulse. 
+This project is looking for being able to register the speed of a vehicle and be able to recognize the type of vehicle. This is looking to become a ticket camera for a city, so this will be a more afordable way to provide this to the city in cuestion. The implementation of this project is done by using multiple elements. The first that will be use is a raspberry pi, a camera compatible with the raspberry and also an omnipresence OPS243-A Doppler Radar Sensor; for the software you wil need to use python version 3.12.3, arduino ID and also the use of a machine learning app name EdgeImpulse. 
 
-For initiating this project, you will need to have both the Dopller sensor and a raspberry pi. You will conect and configure both of this and you will be able to notice if this is done correctly by verifying the serial communication (COM) and for this you can use the arduino IDE program as this let you check in a easy way as this program let you open a window where you can see in real time the information that the sensor is able to receive form the objects in front, this will be the distance and the speed of the object in front of this. 
+For initiating this project, you will need to have both the Dopller sensor and a raspberry pi. You will connect and configure both of this and you will be able to notice if this is done correctly by verifying the serial communication (COM) and for this you can use the arduino IDE program as this let you check in a easy way as this program let you open a window where you can see in real time the information that the sensor is able to receive form the objects in front, this will be the distance and the speed of the object in front of this. 
 
 
 Afer being the configuration of the sensor in the raspberry pi, the next step is to creat a python object detection library by using the tool of edge impulse online. Into this tool you first will need to go into the main menu and after this you will creat a new project. This will need you to select the object detection section on the tool. Into this you will need to take pictures as a recommendation or you can download this fomr the internet for letting the machine learning tool train in the object detection. 
@@ -17,20 +17,20 @@ The steps into the tool for generating a machine learning library of object dete
    After the training is completely done, you will be able to watch a porcentage of accuary that the system has for the object detection, also the porcentage of failure on objet detection and the time reaction by    item. This information will appear for each label that you have created on the pulse, the only caracteristic that this labels share are the time reaction timeframe that the system has to response and the RAM       used.
 
 Now you have to install the Ede impulse on linux, the following states are only for raspberry pi 4 and this is a list of commands that you will need to follow. 
-the rfisrt command that you will need to apply is the following:
+the first command that you will need to apply is the following:
 ```
 curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
 sudo apt install -y gcc g++ make build-essential nodejs sox gstreamer1.0-tools gstreamer1.0-plugins-good gstreamer1.0-plugins-base gstreamer1.0-plugins-base-apps
 npm config set user root && sudo npm install edge-impulse-linux -g --unsafe-perm
 ```
 
-then you will need to get intalled the edge implse linux python SDK 
+Then you will need to get intalled the edge implse linux python SDK 
 ```
 sudo apt-get install libatlas-base-dev libportaudio0 libportaudio2 libportaudiocpp0 portaudio19-dev
 pip3 install edge_impulse_linux -i https://pypi.python.org/simple
 ```
 
-by doing this you will finally applu 
+By doing this you will finally apply 
 ```
 edge-impulse-linux-runner --download model.eim
 ```
