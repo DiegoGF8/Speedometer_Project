@@ -1,43 +1,42 @@
 # Speedometer_Project
 
-This project is looking for being able to register the speed of a vehicle and be able to recognize the type of vehicle. This is looking to become a ticket camera for a city, so this will be a more afordable way to provide this to the city in cuestion. The implementation of this project is done by using multiple elements. The first that will be use is a raspberry pi, a camera compatible with the raspberry and also an omnipresence OPS243-A Doppler Radar Sensor; for the software you wil need to use python version 3.12.3, arduino ID and also the use of a machine learning app name EdgeImpulse. 
+This project aims to register the speed of a vehicle and recognize the type of vehicle. The goal is to create a ticket camera for a city, providing a more affordable solution for the city in question. The implementation of this project involves using multiple components. The first component to be used is a Raspberry Pi, a camera compatible with the Raspberry Pi, and an Omnipresence OPS243-A Doppler Radar Sensor. For the software, you will need to use Python version 3.12.3, Arduino IDE, and a machine learning application named EdgeImpulse.
 
-For initiating this project, you will need to have both the Dopller sensor and a raspberry pi. You will connect and configure both of this and you will be able to notice if this is done correctly by verifying the serial communication (COM) and for this you can use the arduino IDE program as this let you check in a easy way as this program let you open a window where you can see in real time the information that the sensor is able to receive form the objects in front, this will be the distance and the speed of the object in front of this. 
+For initiating this project, you will need both the Doppler sensor and a Raspberry Pi. You will connect and configure both of these, and you will be able to verify if this is done correctly by checking the serial communication (COM). For this, you can use the Arduino IDE program, which allows you to easily check by opening a window where you can see in real time the information that the sensor receives from the objects in front. This information includes the distance and the speed of the object in front of it.
 
+For configuring the sensor in the Raspberry Pi, the next step is to create a Python object detection library using the Edge Impulse online tool. In this tool, you will first need to go to the main menu and then create a new project. You will need to select the object detection section of the tool. In this section, you will need to take pictures, as recommended, or you can download them from the internet to let the machine learning tool train in object detection.
 
-Afer being the configuration of the sensor in the raspberry pi, the next step is to creat a python object detection library by using the tool of edge impulse online. Into this tool you first will need to go into the main menu and after this you will creat a new project. This will need you to select the object detection section on the tool. Into this you will need to take pictures as a recommendation or you can download this fomr the internet for letting the machine learning tool train in the object detection. 
+The steps in the tool for generating a machine learning library for object detection are:
 
-The steps into the tool for generating a machine learning library of object detection are: 
+1. Add data by providing new data. We upload 156 images of cars; these were pictures that we took of cars on the street.
+2. When the system is collecting the data, you will need to verify the object detection on the images. This is done by adding a label, in this case, with the name "car," and then you will verify that the tool recognizes the items or if you need to add the label to each image.  
+3. Then you will start creating a pulse
+4. After starting to create a pulse, you will need to provide the image specifications and the data specifications in the object detection part. In this part, we use 156 images of cars.
+5. After this, you will be done with the specifications of the program, and finally, you select the option to start training.
 
-1. add datsa by providing new data, we upload the quantity of 156 images of cars, this were ictures that we take of cars on the street.
-2. when the  system is collecting the data, you will need to verify the object detection on the images, this will be done by adding a label in this case with the name of car, ande then you will berify that the tool recognizes the items or if you will need to add the label on each image.   
-3. then you will start creating a pulse
-4. after starting creating a pulse, you will need to oprovide the image specificaitons, and the data specifications into the object detection part, in this part we use the ammount of 156 iages of cars.
-5. after this you will be done with the speccifications of the program, and finally you select the option of start training.
-   After the training is completely done, you will be able to watch a porcentage of accuary that the system has for the object detection, also the porcentage of failure on objet detection and the time reaction by    item. This information will appear for each label that you have created on the pulse, the only caracteristic that this labels share are the time reaction timeframe that the system has to response and the RAM       used.
+After the training is completely done, you will be able to see a percentage of accuracy that the system has for object detection, as well as the percentage of failure in object detection and the reaction time per item. This information will appear for each label that you have created in the pulse. The only characteristic that these labels share is the reaction time frame that the system has to respond and the RAM used.
 
-Now you have to install the Ede impulse on linux, the following states are only for raspberry pi 4 and this is a list of commands that you will need to follow. 
-the first command that you will need to apply is the following:
+Now you have to install Edge Impulse on Linux. The following steps are only for Raspberry Pi 4, and this is a list of commands that you will need to follow. The first command that you will need to apply is the following:
 ```
 curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
 sudo apt install -y gcc g++ make build-essential nodejs sox gstreamer1.0-tools gstreamer1.0-plugins-good gstreamer1.0-plugins-base gstreamer1.0-plugins-base-apps
 npm config set user root && sudo npm install edge-impulse-linux -g --unsafe-perm
 ```
 
-Then you will need to get intalled the edge implse linux python SDK 
+Then you will need to get installed the edge implse linux python SDK 
 ```
 sudo apt-get install libatlas-base-dev libportaudio0 libportaudio2 libportaudiocpp0 portaudio19-dev
 pip3 install edge_impulse_linux -i https://pypi.python.org/simple
 ```
 
-By doing this you will finally apply 
+By doing this, you will finally apply: 
 ```
 edge-impulse-linux-runner --download model.eim
 ```
 
-After this installation, the python code will need to make the ML model to identify a vehicule, measure the speed of the vehicule and show it into a window to know the specification of this. 
+After this installation, the python code will need to make the (machine learning) ML model to identify a vehicule, measure the speed of the vehicule and show it into a window to know the specification of this. 
 
-For this part, the following code will display the the data collected by the OPS sensor
+For this part, the following code will display the the data collected by the OPS sensor:
 ```
 import serial
 
@@ -90,9 +89,9 @@ ops_get_speed()
 
 This code, will show the information about on the the format in which we want the data to be displayed.
 
-When you have already all the information installed, then we have to pass to the part of connecting a camera to the raspberry pi, on our case we use a web-cam taht connects via usb, for the case of the raspberry pi 4 you will need to have a camera that conects on usb 3.0 for this to work correct. 
+When you have already all the information installed, then we have to pass to the part of connecting a camera to the raspberry pi, on our case we use a web-cam that connects via usb-a, for the case of the raspberry pi 4 you will need to have a camera that conects on usb 3.0 for this to work correct. 
 
-After using this program, teh next step is to connect the camera, the ML obect detection model and the Doppler sensor for being able to capture the image of the camera when this detects an vehicule if this pass the maximun speed stablished, so this code will be able to generate a document when the image is saved with the data of the object that was detected by the camera. 
+After using this program, the next step is to connect the camera, the ML obect detection model and the Doppler sensor for being able to capture the image of the camera when this detects an vehicule if this pass the maximun speed stablished, so this code will be able to generate a document when the image is saved with the data of the object that was detected by the camera. 
 ```
 import cv2
 import os
@@ -192,9 +191,9 @@ def main():
 while True:
     main()
 ```
-By the way, the project is still on work so this is not complete by this date 04-26-2024, but all the data and documentation about this is avaiblable on this repository done by Juan Pablo Zebadua Engel and Diego Jose Giron Figueroa
+By the way, the project is still in progress, so it is not complete as of this date, 04-26-2024. However, all the data and documentation about this are available in this repository created by Juan Pablo Zebadúa Engel and Diego José Girón Figueroa.
 
-we based our project on the following projects from the web:
+We based our project on the following projects from the web:
 ```
 https://www.hackster.io/rob-lauer/busted-create-an-ml-powered-speed-trap-b1e5d1
 ```
